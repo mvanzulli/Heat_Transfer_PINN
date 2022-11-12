@@ -1,0 +1,18 @@
+dvc
+#dvc-gdrive
+ipykernel
+jupyter
+matplotlib
+--extra-index-url https://download.pytorch.org/whl/cu116
+tensorflow
+torch
+torchvision
+torchaudio
+graphviz
+seaborn
+scipy
+scikit-learn
+split-folders
+pyODE
+plottting
+latex
