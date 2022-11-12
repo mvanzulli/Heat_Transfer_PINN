@@ -1,0 +1,4 @@
+## Figures folder
+- Monitor: plots during testing.
+- Reference: reference results obtained from the model.
+- test: reporttesting plots.

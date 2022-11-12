@@ -10,9 +10,5 @@ torchvision
 torchaudio
 graphviz
 seaborn
-scipy
-scikit-learn
-split-folders
-pyODE
-plottting
 latex
+scikit-learn
