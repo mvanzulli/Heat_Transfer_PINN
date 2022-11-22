@@ -1,8 +1,5 @@
 # InversePINNs
 
-An application of PINNs for solvin material identification problem.
-
-
 <details>
 <summary>(Optional) Python environment setup </summary>
 
