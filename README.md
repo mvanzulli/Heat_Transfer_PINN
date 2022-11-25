@@ -21,7 +21,8 @@ pip install -r requirements.txt
 
 ## Problem statement
 We are interested in estimating the heat generation number in a rectangular fin with temperature dependent thermal conductivity and heat generation. The dimensionless governing equation is shown below:
-$$ \frac{\partial }{\partial x*} \left(  ( 1 + \epsilon_c \theta )  \frac{\partial \theta }{\partial x*} \right)   - N^2 \theta + N^2 G ( 1 + \epsilon_G \theta ) = 0   $$
+
+$$\frac{\partial }{\partial x*} \left(  ( 1 + \epsilon_c \theta )  \frac{\partial \theta }{\partial x*} \right)   - N^2 \theta + N^2 G ( 1 + \epsilon_G \theta ) = 0$$
 
 such that:
 
