@@ -61,12 +61,13 @@ The boundary conditions considered are:
 - at $x* = 0 \rightarrow \theta = 1$
 - at $x* = 1 \rightarrow \frac{\partial\theta}{\partial x*} = 0$
 
-
 ## Dataset
 
 The base temperature $T_b = 127$ °C and ${T_{inf}} = 27$ °C. The synthetic data is created in COMSOL Multi-Physics Software for different values of G. The data set can be found [here](https://github.com/mvanzulli/inversePINNs/blob/main/src/data/raw/Dataset.csv). $[T_1, T_2,... T_9 ]$ represent the temperature vuales at equi-spaced 9 locations between $x_*= 0$ and $x_*=1$. The dataset consits of 500 samples of temperature vectors for different $G$ values as follows:
 
-![image](https://user-images.githubusercontent.com/50339940/204011299-966e9f23-e9f5-487f-ae44-7ffb10cf92a6.png)
+
+<center><img src="https://user-images.githubusercontent.com/50339940/204011299-966e9f23-e9f5-487f-ae44-7ffb10cf92a6.png" alt="drawing" width="300"/> </center>
+
 
 
 ## Challenges
