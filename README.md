@@ -25,7 +25,7 @@ $$ \frac{\partial }{\partial x*} \left(  ( 1 + \epsilon_c \theta )  \frac{\parti
 
 such that:
 
-- $ \theta(x) = \dfrac{T(x) - T_{inf}}{T_{b} - T_{inf}} $
+- $\theta(x) = \frac{T(x) - T_{inf}}{T_{b} - T_{inf}}$
 
 
 - $N = \sqrt{\dfrac{h P L^2}{ k_0 A }} $
