@@ -1,0 +1,5 @@
+data:
+    csv_path: "src/data/raw/heat_transfer_finn.csv"
+    split_ratio: 0.2
+    manual_seed: 123
+    batch_size: 1
