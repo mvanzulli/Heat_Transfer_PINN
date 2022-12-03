@@ -3,3 +3,8 @@ data:
     split_ratio: 0.2
     manual_seed: 123
     batch_size: 1
+    feature_labels: ['T1', 'T2', 'T3', 'T4' ,'T5', 'T6' ,'T7', 'T8' ,'T9']
+    target_label: ['G']
+    T_INF : 300
+    T_B : 400
+    fig_path: "figures/data/"
