@@ -243,7 +243,7 @@ if __name__ == "__main__":
     transform = None
 
     # load data set with theta_transform
-    dataset = CSVDatset(config['data']['csv_path'], transform=transform)
+    dataset = CSVDatset(config['data']['csv_path'], transform=normtheta_transform)
     # split them into train and test
     train_set, test_set = dataset.rand_split()
 
