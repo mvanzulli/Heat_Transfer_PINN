@@ -12,20 +12,12 @@ __date__ = "12/22"
 #Import third-party libraries
 import torch
 from torch.utils.data import Dataset, DataLoader, random_split
-import torchvision.transforms as transforms
 
 import pandas as pd
 from pandas.core.series import Series
 import yaml
 
 import numpy as np
-
-from matplotlib.pyplot import imshow, imsave
-import matplotlib.pyplot as plt
-
-import albumentations as A
-from albumentations.pytorch import ToTensorV2
-
 
 # read config file
 with open('config_surrogate.yaml') as file:
@@ -135,119 +127,21 @@ def normtheta_transform(data, sample):
     return Series(sample)
 
 
-def plot_t_vs_G(data_loader, name_fig, num_samples = 10):
+def test():
     """
-    Plots T(x) for different G samples.
-
-    Args:
-        data_loader (DataLoader): data loader to plot.
-        name_fig(String)        : figure name.
-        num_samples (Int)       : number of different samples to be shown.
+    Function that tests de dataset and data loader creation
     """
-    samples_plotted = []
-
-    plt.cla()
-
-    for i in range (num_samples):
-
-        sample_picked = np.random.randint(0, len(data_loader))
-        # sample_picked = i
-        # print(sample_picked)
-        sample_values = data_loader.dataset[sample_picked].to_numpy()
-        # [G, T_1 ..., T__9]
-        G_sample = sample_values[0]
-        T_sample = sample_values[1:]
-        # auxiliary array of ones to plot G
-        aux_ones = np.ones((T_sample.shape[0],))
-        label =  'G = %.2f' % G_sample
-
-        if sample_picked not in samples_plotted:
-            Y_plot = G_sample * aux_ones
-            plt.scatter(
-                T_sample, Y_plot,
-                label=label, marker=".", s=40,
-            )
-            samples_plotted.append(sample_picked)
-
-    plt.ylabel('$G$')
-    if T_sample.mean() <=10:
-        plt.xlabel(r'$(\theta_1,...,\theta_9)$')
-    else:
-        plt.xlabel(r'$(T_1,...,T_9)$')
-
-    plt.legend(loc='best', prop={'size': 6})
-    plt.savefig(config['data']['fig_path'] + name_fig)
-
-
-    return None
-
-def plot_t_vs_x(data_loader, name_fig, num_samples = 10):
-    """
-    Plots T(x) for different G samples.
-
-    Args:
-        data_loader (DataLoader): data loader to plot.
-        name_fig(String)        : figure name.
-        num_samples (Int)       : number of different samples to be shown.
-    """
-    samples_plotted = []
-
-    plt.cla()
-    while len(samples_plotted) < num_samples:
-
-        sample_picked = np.random.randint(0, len(data_loader))
-        sample_values = data_loader.dataset[sample_picked].to_numpy()
-        G_sample = sample_values[0]
-        T_sample = sample_values[1:]
-        label =  'G = %.2f' % G_sample
-
-        if sample_picked not in samples_plotted:
-            plt.plot(T_sample,label=label, marker = ".")
-            samples_plotted.append(sample_picked)
-
-    plt.xlabel('# $X*$')
-    if T_sample.mean() <=10:
-        plt.ylabel(r'$\theta$')
-    else:
-        plt.ylabel('$T(K)$')
-
-
-    plt.legend(loc='best', prop={'size': 6})
-    plt.savefig(config['data']['fig_path'] + name_fig)
-
-
-def plot_temperature(namefig, transform, num_samples = 10):
-
-    # load data set with theta_transform
-    dataset = CSVDatset(config['data']['csv_path'], transform=transform)
-    # split them into train and test
-    train_set, test_set = dataset.rand_split()
-
-    data_loader = DataLoader(
-        train_set, batch_size=config['data']['batch_size'],
-        num_workers=4,
-    )
-
-    plot_t_vs_x(data_loader, namefig + 'vs_x_' + str(num_samples) + '_sample', num_samples)
-    plot_t_vs_G(data_loader, namefig + 'vs_G_' + str(num_samples) + '_sample', num_samples)
-
-
-
-
-if __name__ == "__main__":
-
-    # plot_temperature('theta', transform = theta_transform, num_samples = 100)
-    # plot_temperature('T', transform = None, num_samples = 100)
-    # plot_temperature('theta_norm', transform = normtheta_transform, num_samples = 5)
-
-    transform = None
-
     # load data set with theta_transform
     dataset = CSVDatset(config['data']['csv_path'], transform=normtheta_transform)
     # split them into train and test
     train_set, test_set = dataset.rand_split()
 
     data_loader = DataLoader(
-        train_set, batch_size=config['data']['batch_size'],
+        train_set,
+        batch_size=config['data']['batch_size'],
         num_workers=4,
     )
+
+
+if __name__ == "__main__":
+    test()
