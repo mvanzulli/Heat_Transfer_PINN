@@ -3,9 +3,15 @@ using DataFrames: DataFrame, select
 using DelimitedFiles: readdlm
 using Plots: plot
 using CSV: File
+using StatsPlots: @df
 
 relative_csv_path = "./../src/data/raw/heat_transfer_finn.csv"
 df = DataFrame(File(relative_csv_path))
+
+# plot a DataFrame in julia
+
+
+
 
 @df df plot([:T1],:G, label = "T1")
 @df df plot!([:T2],:G, label = "T2")
