@@ -134,6 +134,8 @@ def plot_G_vs_tx(data_loader, name_fig, num_samples = 10):
 
         if sample_picked not in samples_plotted:
             ax.plot(X_sample, T_sample, G_sample, label=label, marker = ".")
+            ax.plot(X_sample, T_sample, np.multiply(0,G_sample), color = 'grey',  marker = ".")
+            ax.plot(np.multiply(0,X_sample), T_sample, G_sample, color = 'grey',  marker = ".")
             samples_plotted.append(sample_picked)
 
     ax.set_xlabel('$X*$')
@@ -145,8 +147,8 @@ def plot_G_vs_tx(data_loader, name_fig, num_samples = 10):
 
     ax.set_xlim(X_sample[0], X_sample[-1])
     ax.set_zlim(0, 1)
-    ax.legend(loc='upper left', prop={'size': 6})
-    # plt.savefig(config['data']['fig_path'] + name_fig)
+    # ax.legend(loc='upper left', prop={'size': 6})
+    plt.savefig(config['data']['fig_path'] + name_fig)
     plt.show()
 
 
@@ -168,7 +170,7 @@ def plot_temperature(namefig, transform, num_samples = 10):
 
 if __name__ ==  "__main__":
 
-    ns = 50
+    ns = 30
     plot_temperature('theta', transform = theta_transform, num_samples = ns)
     plot_temperature('T', transform = None, num_samples = ns)
     plot_temperature('theta_norm', transform = normtheta_transform, num_samples = ns)
