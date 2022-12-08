@@ -8,8 +8,7 @@ using StatsPlots: @df
 relative_csv_path = "./../src/data/raw/heat_transfer_finn.csv"
 df = DataFrame(File(relative_csv_path))
 
-# plot a DataFrame in julia
-
+#plot a data frame in julia using StatsPlots
 
 
 
