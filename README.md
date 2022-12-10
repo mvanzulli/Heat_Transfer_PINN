@@ -66,11 +66,7 @@ The boundary conditions considered are:
 The base temperature $T_b = 127$ °C and ${T_{inf}} = 27$ °C. The synthetic data is created in COMSOL Multi-Physics Software for different values of G. The data set can be found [here](https://github.com/mvanzulli/inversePINNs/blob/main/src/data/raw/Dataset.csv). $[T_1, T_2,... T_9 ]$ represent the temperature vuales at equi-spaced 9 locations between $x*= 0$ and $x*=1$. The dataset consits of 500 samples of temperature vectors for different $G$ values as follows:
 
 
-<center><img src="https://user-images.githubusercontent.com/50339940/204011299-966e9f23-e9f5-487f-ae44-7ffb10cf92a6.png" alt="drawing" width="300"/> </center>
-
-
-
-## Challenges
+<center><img src="https://user-images.githubusercontent.com/50339940/206868963-e975b3b5-7cff-404b-8f04-487a53ab0791.png" alt="drawing" width="300"/> </center>
 
 1. **Train a surrogate fully connected neural network model** on the provided dataset to learn the
 mapping from the temperature field to G. The dataset may be split to train and test data in 80:20
