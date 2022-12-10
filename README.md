@@ -68,6 +68,9 @@ The base temperature $T_b = 127$ °C and ${T_{inf}} = 27$ °C. The synthetic dat
 
 <center><img src="https://user-images.githubusercontent.com/50339940/206868963-e975b3b5-7cff-404b-8f04-487a53ab0791.png" alt="drawing" width="300"/> </center>
 
+## Challenges solved:
+
+
 1. **Train a surrogate fully connected neural network model** on the provided dataset to learn the
 mapping from the temperature field to G. The dataset may be split to train and test data in 80:20
 ratio. Investigate the number training samples required for this task by training the model with
