@@ -1,4 +1,4 @@
-# InversePINNs
+# HeatTransferPINN
 
 ## Repo usage
 
